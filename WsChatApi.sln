@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsChatApi", "WsChatApi.csproj", "{73076550-B46D-4DD0-AD85-05EF437C9EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73076550-B46D-4DD0-AD85-05EF437C9EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73076550-B46D-4DD0-AD85-05EF437C9EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73076550-B46D-4DD0-AD85-05EF437C9EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73076550-B46D-4DD0-AD85-05EF437C9EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9E13BC7-F783-47A0-AC09-312A14AD3592}
+	EndGlobalSection
+EndGlobal
