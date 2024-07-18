@@ -1,15 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers> <!-- Add your target runtimes here -->
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <UserSecretsId>f0b66c87-9634-415f-ba82-cb3e7091fa21</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.304.4" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.310.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
-
 </Project>

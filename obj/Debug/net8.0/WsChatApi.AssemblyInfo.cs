@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WsChatApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92858f8e288dec553d7f0b7684f34152e57f4174")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5abe0a90165a0ed595e2a2c7320dc733fb83ec94")]
 [assembly: System.Reflection.AssemblyProductAttribute("WsChatApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WsChatApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

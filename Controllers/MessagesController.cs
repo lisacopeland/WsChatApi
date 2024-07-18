@@ -11,19 +11,53 @@ namespace webchat.Controllers
     {
         private readonly MessageService _messageService;
         private readonly WebSocketService _websocketService;
+        private readonly UploadService _uploadService;
 
-        public MessagesController(MessageService messageService, WebSocketService webSocketService)
+        public MessagesController(
+            MessageService messageService,
+            WebSocketService webSocketService,
+            UploadService uploadService
+        )
         {
             _messageService = messageService;
             _websocketService = webSocketService;
+            _uploadService = uploadService;
         }
 
         [HttpGet]
         public async Task<List<MessageClass>> Get()
         {
-           List<MessageClass> messages = await _messageService.GetAllAsync();
+            List<MessageClass> messages = await _messageService.GetAllAsync();
             return messages;
-        } 
+        }
+
+        [HttpPost]
+        [Route("UploadMessageAsset")]
+        public async Task<IActionResult> Post([FromBody] IFormFile file)
+        {
+            ApiResponseClass result;
+            if (
+                !Request.Headers.TryGetValue(
+                    "messageId",
+                    out Microsoft.Extensions.Primitives.StringValues messageId
+                )
+            )
+            {
+                result = new ApiResponseClass() { Success = false, Message = "Bad Upload Request" };
+                return BadRequest(result);
+            }
+
+            var uploadFile = Request.Form.Files[0];
+            result = await _uploadService.UploadMessageAsset(messageId, uploadFile);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post(MessageClass newMessageClass)
@@ -51,6 +85,5 @@ namespace webchat.Controllers
                 return BadRequest(result);
             }
         }
-
     }
 }

@@ -9,5 +9,6 @@ namespace webchat.Utilities
         public const string userExitedAction = "Users: User Exited";
 
         public const string WsChatTableName = "wschat";
+        public const string WSS3BucketName = "wschatassets";
     }
 }

@@ -35,3 +35,4 @@ C:\Users\lisac\Documents\WsChatApi\obj\Debug\net8.0\refint\WsChatApi.dll
 C:\Users\lisac\Documents\WsChatApi\obj\Debug\net8.0\WsChatApi.pdb
 C:\Users\lisac\Documents\WsChatApi\obj\Debug\net8.0\WsChatApi.genruntimeconfig.cache
 C:\Users\lisac\Documents\WsChatApi\obj\Debug\net8.0\ref\WsChatApi.dll
+C:\Users\lisac\Documents\WsChatApi\obj\Debug\net8.0\WsChatApi.sourcelink.json
