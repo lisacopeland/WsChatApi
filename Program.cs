@@ -8,6 +8,10 @@ namespace WsChatApi
     {
         public static void Main(string[] args)
         {
+            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            // Duplicate here any configuration sources you use.
+            configurationBuilder.AddJsonFile("AppSettings.json");
+            IConfiguration configuration = configurationBuilder.Build();
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -20,6 +24,7 @@ namespace WsChatApi
             builder.Services.AddSingleton<MessageService>();
             builder.Services.AddSingleton<WebSocketService>();
             builder.Services.AddSingleton<UserService>();
+            builder.Services.AddSingleton<UploadService>();
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -30,6 +35,8 @@ namespace WsChatApi
                                             .AllowAnyMethod();
                     });
             });
+            builder.WebHost.UseUrls("http://0.0.0.0:5000");
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -41,8 +48,8 @@ namespace WsChatApi
             var webSocketOptions = new WebSocketOptions { KeepAliveInterval = TimeSpan.FromMinutes(2) };
 
             app.UseWebSockets(webSocketOptions);
-            app.UseHttpsRedirection();
-
+            //app.UseHttpsRedirection();
+            
             app.UseAuthorization();
 
 
