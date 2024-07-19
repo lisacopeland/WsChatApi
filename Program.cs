@@ -6,12 +6,9 @@ namespace WsChatApi
 {
     public class Program
     {
+        public static IConfiguration Configuration { get; set; }
         public static void Main(string[] args)
         {
-            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
-            // Duplicate here any configuration sources you use.
-            configurationBuilder.AddJsonFile("AppSettings.json");
-            IConfiguration configuration = configurationBuilder.Build();
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -30,7 +27,7 @@ namespace WsChatApi
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200")
+                        builder.WithOrigins("*")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });

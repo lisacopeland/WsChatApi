@@ -18,6 +18,12 @@ namespace webchat.Controllers
             _userService = userService;
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("All good!");
+        }
+
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginClass body)
