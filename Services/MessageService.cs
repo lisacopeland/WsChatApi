@@ -1,7 +1,7 @@
 ﻿using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using Amazon.S3;
+using Amazon.Runtime;
 using webchat.Models;
 using webchat.Utilities;
 
@@ -11,17 +11,16 @@ namespace webchat.Service
     {
         private readonly IConfiguration _config;
         private readonly AmazonDynamoDBClient _client;
-        private readonly IAmazonS3 _s3Client;
         private readonly string _pkVal;
         public MessageService(
             IConfiguration config)
         {
-            _config = config;
-            _client = new AmazonDynamoDBClient();
             _pkVal = "messages";
-            string secretKey = _config["awsSecretKey"];
-            string accessKey = _config["awsAccessKey"];
-            _s3Client = new AmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2);
+            _config = config;
+            string awsAccessKey = _config["AWS_ACCESS_KEY"];
+            string awsSecretKey = _config["AWS_SECRET_KEY"];
+            var credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
+            _client = new AmazonDynamoDBClient(credentials, RegionEndpoint.USWest2);
         }
 
         // Used

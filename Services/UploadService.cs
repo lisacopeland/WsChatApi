@@ -1,4 +1,5 @@
 ﻿using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using webchat.Models;
@@ -14,9 +15,10 @@ namespace webchat.Service
             IConfiguration config)
         {
             _config = config;
-            string secretKey = _config["awsSecretKey"];
-            string accessKey = _config["awsAccessKey"];
-            _s3Client = new AmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2);
+            string awsAccessKey = _config["AWS_ACCESS_KEY"];
+            string awsSecretKey = _config["AWS_SECRET_KEY"];
+            var credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
+            _s3Client = new AmazonS3Client(credentials, RegionEndpoint.USWest2);
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
 using webchat.Models;
 using webchat.Utilities;
 
@@ -14,7 +15,10 @@ namespace webchat.Service
         public UserService(IConfiguration config)
         {
             _config = config;
-            _client = new AmazonDynamoDBClient();
+            string awsAccessKey = _config["AWS_ACCESS_KEY"];
+            string awsSecretKey = _config["AWS_SECRET_KEY"];
+            var credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
+            _client = new AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USWest2);
             _pkVal = "users";
         }
 

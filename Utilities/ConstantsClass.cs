@@ -1,4 +1,5 @@
-﻿using webchat.Models;
+﻿using Amazon;
+using webchat.Models;
 
 namespace webchat.Utilities
 {
@@ -10,5 +11,7 @@ namespace webchat.Utilities
 
         public const string WsChatTableName = "wschat";
         public const string WSS3BucketName = "wschatassets";
+
+
     }
 }
