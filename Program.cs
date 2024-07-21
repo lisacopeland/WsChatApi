@@ -55,7 +55,7 @@ namespace WsChatApi
             var webSocketOptions = new WebSocketOptions { KeepAliveInterval = TimeSpan.FromMinutes(2) };
 
             app.UseWebSockets(webSocketOptions);
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             
             app.UseAuthorization();
 
