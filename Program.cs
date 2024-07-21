@@ -39,7 +39,10 @@ namespace WsChatApi
                                             .AllowAnyMethod();
                     });
             });
-            builder.WebHost.UseUrls("http://0.0.0.0:5000");
+            if (!builder.Environment.IsDevelopment())
+            {
+                builder.WebHost.UseUrls("http://0.0.0.0:5000");
+            }
 
             var app = builder.Build();
 

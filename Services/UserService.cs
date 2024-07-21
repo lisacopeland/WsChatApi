@@ -17,7 +17,6 @@ namespace webchat.Service
             _config = config;
             string awsAccessKey = _config["AWS_ACCESS_KEY"];
             string awsSecretKey = _config["AWS_SECRET_KEY"];
-            Console.WriteLine($"Got secret {awsSecretKey}");
             var credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
             _client = new AmazonDynamoDBClient(credentials, Amazon.RegionEndpoint.USWest2);
             _pkVal = "users";
