@@ -1,6 +1,9 @@
 
 using Amazon.DynamoDBv2;
+using System.Net.WebSockets;
+using System.Text;
 using webchat.Service;
+using WsChatApi.Service;
 
 namespace WsChatApi
 {
@@ -27,6 +30,7 @@ namespace WsChatApi
             builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
             builder.Services.AddSingleton<MessageService>();
             builder.Services.AddSingleton<WebSocketService>();
+            builder.Services.AddSingleton<WebSocketConnectionManager>();
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddSingleton<UploadService>();
             builder.Services.AddCors(options =>
@@ -55,8 +59,21 @@ namespace WsChatApi
             var webSocketOptions = new WebSocketOptions { KeepAliveInterval = TimeSpan.FromMinutes(2) };
 
             app.UseWebSockets(webSocketOptions);
+            app.Use(async (context, next) =>
+            {
+                if (context.WebSockets.IsWebSocketRequest)
+                {
+                    WebSocket webSocket = await context.WebSockets.AcceptWebSocketAsync();
+                    var webSocketManager = context.RequestServices.GetRequiredService<WebSocketConnectionManager>();
+                    await webSocketManager.HandleWebSocketConnection(webSocket);
+                }
+                else
+                {
+                    await next();
+                }
+            });
             // app.UseHttpsRedirection();
-            
+
             app.UseAuthorization();
 
 
@@ -65,5 +82,6 @@ namespace WsChatApi
 
             app.Run();
         }
+
     }
 }

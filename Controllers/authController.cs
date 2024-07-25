@@ -2,6 +2,7 @@
 using webchat.Models;
 using webchat.Service;
 using webchat.Utilities;
+using WsChatApi.Service;
 
 namespace webchat.Controllers
 {
@@ -9,12 +10,12 @@ namespace webchat.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
-        private readonly WebSocketService _websocketService;
+        private readonly WebSocketConnectionManager _webSocketManager;
         private readonly UserService _userService;
 
-        public AuthController(UserService userService, WebSocketService webSocketService)
+        public AuthController(UserService userService, WebSocketConnectionManager webSocketManager)
         {
-            _websocketService = webSocketService;
+            _webSocketManager = webSocketManager;
             _userService = userService;
         }
 
@@ -45,8 +46,8 @@ namespace webchat.Controllers
             ActionPayload actionPayload = new ActionPayload();
             actionPayload.Action = WSConstants.userEnteredAction;
             actionPayload.Payload = userPayload;
-            await _websocketService.AcceptWebSocketAsync(HttpContext);
-            await _websocketService.SendMessageAsync(actionPayload);
+            // await _websocketService.AcceptWebSocketAsync(HttpContext);
+            await _webSocketManager.BroadcastMessageAsync(actionPayload);
             await _userService.UpdateAsync(UserClass.Id, UserClass);
             return Ok(UserClass);
         }
@@ -71,8 +72,8 @@ namespace webchat.Controllers
             ActionPayload actionPayload = new ActionPayload();
             actionPayload.Action = WSConstants.userExitedAction;
             actionPayload.Payload = payload;
-            await _websocketService.AcceptWebSocketAsync(HttpContext);
-            await _websocketService.SendMessageAsync(actionPayload);
+            // await _websocketService.AcceptWebSocketAsync(HttpContext);
+            await _webSocketManager.BroadcastMessageAsync(actionPayload);
             await _userService.UpdateAsync(body.Id, UserClass);
 
             result = new ApiResponseClass { Success = true };

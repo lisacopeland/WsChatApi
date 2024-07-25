@@ -2,6 +2,7 @@
 using webchat.Models;
 using webchat.Service;
 using webchat.Utilities;
+using WsChatApi.Service;
 
 namespace webchat.Controllers
 {
@@ -10,17 +11,17 @@ namespace webchat.Controllers
     public class MessagesController : ControllerBase
     {
         private readonly MessageService _messageService;
-        private readonly WebSocketService _websocketService;
+        private readonly WebSocketConnectionManager _webSocketManager;
         private readonly UploadService _uploadService;
 
         public MessagesController(
             MessageService messageService,
-            WebSocketService webSocketService,
+            WebSocketConnectionManager webSocketManager,
             UploadService uploadService
         )
         {
             _messageService = messageService;
-            _websocketService = webSocketService;
+            _webSocketManager = webSocketManager;
             _uploadService = uploadService;
         }
 
@@ -71,8 +72,8 @@ namespace webchat.Controllers
                 ActionPayload actionPayload = new ActionPayload();
                 actionPayload.Action = WSConstants.userMessageCreatedAction;
                 actionPayload.Payload = payload;
-                await _websocketService.AcceptWebSocketAsync(HttpContext);
-                await _websocketService.SendMessageAsync(actionPayload);
+                // await _websocketService.AcceptWebSocketAsync(HttpContext);
+                await _webSocketManager.BroadcastMessageAsync(actionPayload);
                 result = new ApiResponseClass { Success = true };
                 result.Message = "Message created successfully";
                 result.Id = newMessageClass.Id;
