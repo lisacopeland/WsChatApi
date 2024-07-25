@@ -42,7 +42,7 @@ namespace webchat.Models
                     Id = item.TryGetValue("Id", out var id) ? id.S : null,
                     UserName = item.TryGetValue("UserName", out var userName) ? userName.S : null,
                     Message = item.TryGetValue("Message", out var message) ? message.S : null,
-                    MessageDate = item.TryGetValue("MessageDate", out var messageDateStr) && DateTime.TryParse(messageDateStr.S, out var createDate) ? createDate : (DateTime?)null,
+                    MessageDate = item.TryGetValue("MessageDate", out var messageDateStr) && DateTime.TryParse(messageDateStr.S, out var messageDate) ? messageDate : (DateTime?)null,
                 };
                 users.Add(user);
             }

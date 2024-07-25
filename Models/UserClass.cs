@@ -48,7 +48,7 @@ namespace webchat.Models
                     UserName = item.TryGetValue("UserName", out var userName) ? userName.S : null,
                     Email = item.TryGetValue("Email", out var email) ? email.S : null,
                     DisplayName = item.TryGetValue("DisplayName", out var displayName) ? displayName.S : null,
-                    CreatedDate = item.TryGetValue("CreateDate", out var createDateStr) && DateTime.TryParse(createDateStr.S, out var createDate) ? createDate : (DateTime?)null,
+                    CreatedDate = item.TryGetValue("CreatedDate", out var createdDateStr) && DateTime.TryParse(createdDateStr.S, out var createdDate) ? createdDate : (DateTime?)null,
                     Online = item.TryGetValue("Online", out var online) && online.BOOL
                 };
                 users.Add(user);
