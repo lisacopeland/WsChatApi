@@ -13,6 +13,7 @@ namespace webchat.Models
         public string? Id { get; set; }
         public string? UserName { get; set; }
         public string? Email { get; set; }
+        public string? AvatarUrl { get; set; }
         public string? DisplayName { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool Online { get; set; }
@@ -32,7 +33,8 @@ namespace webchat.Models
                 { "Email", new AttributeValue{ S = user.Email } },
                 { "DisplayName", new AttributeValue { S = user.DisplayName} },
                 { "CreatedDate", new AttributeValue { S = user.CreatedDate.ToString() } },
-                { "Online", new AttributeValue { BOOL = user.Online} }
+                { "Online", new AttributeValue { BOOL = user.Online} },
+                { "AvatarUrl", new AttributeValue { S = user.AvatarUrl} }
             };
         }
 
@@ -46,6 +48,7 @@ namespace webchat.Models
                 {
                     Id = item.TryGetValue("Id", out var id) ? id.S : null,
                     UserName = item.TryGetValue("UserName", out var userName) ? userName.S : null,
+                    AvatarUrl = item.TryGetValue("AvatarUrl", out var avatarUrl) ? avatarUrl.S : null,
                     Email = item.TryGetValue("Email", out var email) ? email.S : null,
                     DisplayName = item.TryGetValue("DisplayName", out var displayName) ? displayName.S : null,
                     CreatedDate = item.TryGetValue("CreatedDate", out var createdDateStr) && DateTime.TryParse(createdDateStr.S, out var createdDate) ? createdDate : (DateTime?)null,
