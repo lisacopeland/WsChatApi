@@ -36,7 +36,8 @@ namespace webchat.Service
                         ":pk",
                         new AttributeValue { S = _pkVal }
                     }
-                }
+                },
+                ScanIndexForward = false,
             };
             QueryResponse response = await _client.QueryAsync(request);
             var responseList = response.Items;

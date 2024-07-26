@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\lisac\\Documents\\WsChatApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\models\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:models\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\models\\messageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:models\\messageclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\models\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:models\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|c:\\users\\lisac\\documents\\wschatapi\\services\\uploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73076550-B46D-4DD0-AD85-05EF437C9EDF}|WsChatApi.csproj|solutionrelative:services\\uploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -105,35 +105,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 284,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "WebSocketConnectionManagerClass.cs",
-              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\WebSocketConnectionManagerClass.cs",
-              "RelativeDocumentMoniker": "Services\\WebSocketConnectionManagerClass.cs",
-              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\WebSocketConnectionManagerClass.cs",
-              "RelativeToolTip": "Services\\WebSocketConnectionManagerClass.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAMwDsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T23:40:21.693Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAApwCgAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:27:18.643Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "authController.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Controllers\\authController.cs",
               "RelativeDocumentMoniker": "Controllers\\authController.cs",
@@ -145,20 +121,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserClass.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Models\\UserClass.cs",
               "RelativeDocumentMoniker": "Models\\UserClass.cs",
               "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Models\\UserClass.cs",
               "RelativeToolTip": "Models\\UserClass.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAowCsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-14T22:43:01.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LoginClass.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Models\\LoginClass.cs",
               "RelativeDocumentMoniker": "Models\\LoginClass.cs",
@@ -170,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -182,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -194,6 +170,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MessageService.cs",
+              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\MessageService.cs",
+              "RelativeDocumentMoniker": "Services\\MessageService.cs",
+              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\MessageService.cs",
+              "RelativeToolTip": "Services\\MessageService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T01:01:26.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAApwCgAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T22:27:18.643Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MessageClass.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Models\\MessageClass.cs",
@@ -202,11 +203,12 @@
               "RelativeToolTip": "Models\\MessageClass.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAowCwAAACjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T04:43:48.4Z"
+              "WhenOpened": "2024-07-07T04:43:48.4Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -218,7 +220,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
+              "Title": "WebSocketConnectionManagerClass.cs",
+              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\WebSocketConnectionManagerClass.cs",
+              "RelativeDocumentMoniker": "Services\\WebSocketConnectionManagerClass.cs",
+              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\WebSocketConnectionManagerClass.cs",
+              "RelativeToolTip": "Services\\WebSocketConnectionManagerClass.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAMwDsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T23:40:21.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "WebsocketControlller.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Controllers\\WebsocketControlller.cs",
               "RelativeDocumentMoniker": "Controllers\\WebsocketControlller.cs",
@@ -230,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "FolderProfile.pubxml",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Properties\\PublishProfiles\\FolderProfile.pubxml",
               "RelativeDocumentMoniker": "Properties\\PublishProfiles\\FolderProfile.pubxml",
@@ -242,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "appsettings.Production.json",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\appsettings.Production.json",
               "RelativeDocumentMoniker": "appsettings.Production.json",
@@ -254,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "WsChatApi.http",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\WsChatApi.http",
               "RelativeDocumentMoniker": "WsChatApi.http",
@@ -266,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -278,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\App.config",
               "RelativeDocumentMoniker": "App.config",
@@ -290,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -323,18 +337,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-14T22:15:50.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MessageService.cs",
-              "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\MessageService.cs",
-              "RelativeDocumentMoniker": "Services\\MessageService.cs",
-              "ToolTip": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\MessageService.cs",
-              "RelativeToolTip": "Services\\MessageService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:01:26.924Z"
             },
             {
               "$type": "Document",
@@ -380,7 +382,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MessagesController.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
@@ -392,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "WebSocketService.cs",
               "DocumentMoniker": "C:\\Users\\lisac\\Documents\\WsChatApi\\Services\\WebSocketService.cs",
               "RelativeDocumentMoniker": "Services\\WebSocketService.cs",
