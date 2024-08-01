@@ -46,7 +46,6 @@ namespace webchat.Controllers
             ActionPayload actionPayload = new ActionPayload();
             actionPayload.Action = WSConstants.userEnteredAction;
             actionPayload.Payload = userPayload;
-            // await _websocketService.AcceptWebSocketAsync(HttpContext);
             await _webSocketManager.BroadcastMessageAsync(actionPayload);
             await _userService.UpdateAsync(UserClass.Id, UserClass);
             return Ok(UserClass);
@@ -72,7 +71,6 @@ namespace webchat.Controllers
             ActionPayload actionPayload = new ActionPayload();
             actionPayload.Action = WSConstants.userExitedAction;
             actionPayload.Payload = payload;
-            // await _websocketService.AcceptWebSocketAsync(HttpContext);
             await _webSocketManager.BroadcastMessageAsync(actionPayload);
             await _userService.UpdateAsync(body.Id, UserClass);
 

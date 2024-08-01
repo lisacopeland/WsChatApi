@@ -1,15 +1,15 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Net.WebSockets;
 using System.Text;
-using System.Threading;
+using Newtonsoft.Json;
 using webchat.Models;
 
 namespace WsChatApi.Service
 {
     public class WebSocketConnectionManager
     {
-        private ConcurrentDictionary<string, WebSocket> _sockets = new ConcurrentDictionary<string, WebSocket>();
+        private ConcurrentDictionary<string, WebSocket> _sockets =
+            new ConcurrentDictionary<string, WebSocket>();
         private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
         public void AddSocket(WebSocket socket)
@@ -21,7 +21,11 @@ namespace WsChatApi.Service
         public async Task RemoveSocket(string id)
         {
             _sockets.TryRemove(id, out WebSocket socket);
-            await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed by the WebSocketConnectionManager", CancellationToken.None);
+            await socket.CloseAsync(
+                WebSocketCloseStatus.NormalClosure,
+                "Closed by the WebSocketConnectionManager",
+                CancellationToken.None
+            );
         }
 
         public ConcurrentDictionary<string, WebSocket> GetAllSockets()
@@ -40,7 +44,14 @@ namespace WsChatApi.Service
             {
                 if (socket.State == WebSocketState.Open)
                 {
-                    tasks.Add(socket.SendAsync(arraySegment, WebSocketMessageType.Text, true, _cancellationTokenSource.Token));
+                    tasks.Add(
+                        socket.SendAsync(
+                            arraySegment,
+                            WebSocketMessageType.Text,
+                            true,
+                            _cancellationTokenSource.Token
+                        )
+                    );
                 }
             }
 
@@ -57,12 +68,19 @@ namespace WsChatApi.Service
             {
                 try
                 {
-                    var result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    var result = await webSocket.ReceiveAsync(
+                        new ArraySegment<byte>(buffer),
+                        CancellationToken.None
+                    );
 
                     if (result.MessageType == WebSocketMessageType.Close)
                     {
                         // Handle client-initiated close
-                        await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed by the client", CancellationToken.None);
+                        await webSocket.CloseAsync(
+                            WebSocketCloseStatus.NormalClosure,
+                            "Closed by the client",
+                            CancellationToken.None
+                        );
                         break;
                     }
 

@@ -11,8 +11,8 @@ namespace webchat.Service
     {
         private readonly IConfiguration _config;
         private readonly IAmazonS3 _s3Client;
-        public UploadService(
-            IConfiguration config)
+
+        public UploadService(IConfiguration config)
         {
             _config = config;
             string awsAccessKey = _config["AWS_ACCESS_KEY"];
@@ -20,7 +20,6 @@ namespace webchat.Service
             var credentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
             _s3Client = new AmazonS3Client(credentials, RegionEndpoint.USWest2);
         }
-
 
         public async Task<ApiResponseClass> UploadMessageAsset(string messageId, IFormFile file)
         {
@@ -31,7 +30,8 @@ namespace webchat.Service
             if (extension != null)
             {
                 location = $"Assets/{messageId}{extension}";
-            } else
+            }
+            else
             {
                 location = $"Assets/{messageId}";
             }
@@ -52,17 +52,12 @@ namespace webchat.Service
                 result = new ApiResponseClass()
                 {
                     Success = true,
-                    Message = "File uploaded successfully" 
+                    Message = "File uploaded successfully"
                 };
             }
             catch (Exception ex)
             {
-                result = new ApiResponseClass()
-                {
-                    Success = false,
-                    Message = ex.Message
-                };
-
+                result = new ApiResponseClass() { Success = false, Message = ex.Message };
             }
             return result;
         }

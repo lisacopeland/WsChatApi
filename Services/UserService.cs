@@ -42,6 +42,47 @@ namespace webchat.Service
             return users;
         }
 
+        public async Task<List<UserClass>> GetUsersAsync(List<string> userNames)
+        {
+            var keys = userNames
+                .Select(userName => new Dictionary<string, AttributeValue>
+                {
+                    {
+                        "pk",
+                        new AttributeValue { S = _pkVal }
+                    },
+                    {
+                        "sk",
+                        new AttributeValue { S = userName }
+                    }
+                })
+                .ToList();
+
+            var request = new BatchGetItemRequest
+            {
+                RequestItems = new Dictionary<string, KeysAndAttributes>
+                {
+                    {
+                        WSConstants.WsChatTableName,
+                        new KeysAndAttributes { Keys = keys }
+                    }
+                }
+            };
+
+            BatchGetItemResponse response = await _client.BatchGetItemAsync(request);
+            if (response != null)
+            {
+                List<UserClass> users = UserClass.GetUsersFromQueryResponse(
+                    response.Responses[WSConstants.WsChatTableName]
+                );
+                return users;
+            }
+            else
+            {
+                return new List<UserClass>();
+            }
+        }
+
         public async Task<List<UserClass>> GetLoggedInUsersAsync()
         {
             var request = new QueryRequest

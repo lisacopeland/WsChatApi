@@ -2,6 +2,7 @@
 using webchat.Models;
 using webchat.Service;
 using webchat.Utilities;
+using WsChatApi.Models;
 using WsChatApi.Service;
 
 namespace webchat.Controllers
@@ -29,6 +30,14 @@ namespace webchat.Controllers
         public async Task<List<MessageClass>> Get()
         {
             List<MessageClass> messages = await _messageService.GetAllAsync();
+            return messages;
+        }
+
+        [HttpGet]
+        [Route("GetChatMessages")]
+        public async Task<List<MessageDTOClass>> GetChatMessages()
+        {
+            List<MessageDTOClass> messages = await _messageService.GetDisplayMessagesAsync();
             return messages;
         }
 
@@ -72,7 +81,6 @@ namespace webchat.Controllers
                 ActionPayload actionPayload = new ActionPayload();
                 actionPayload.Action = WSConstants.userMessageCreatedAction;
                 actionPayload.Payload = payload;
-                // await _websocketService.AcceptWebSocketAsync(HttpContext);
                 await _webSocketManager.BroadcastMessageAsync(actionPayload);
                 result = new ApiResponseClass { Success = true };
                 result.Message = "Message created successfully";
